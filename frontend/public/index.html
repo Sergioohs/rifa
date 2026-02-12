@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rifa - Consulta</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <h1 id="title">Rifa</h1>
+        <p class="muted" id="meta">Carregando...</p>
+      </div>
+      <a class="btn" href="/admin/">Painel Admin</a>
+    </header>
+
+    <section class="card">
+      <h2>Consultar número</h2>
+      <div class="row">
+        <input id="raffleId" type="number" min="1" placeholder="ID da rifa (ex: 1)" />
+        <input id="ticketNum" type="number" min="1" placeholder="Número (ex: 25)" />
+        <button class="btn primary" id="btnFind">Buscar</button>
+      </div>
+      <p class="muted">Dica: no painel admin você cria a rifa e gera os números.</p>
+      <div id="result" class="result"></div>
+    </section>
+
+    <section class="card">
+      <h2>Como funciona</h2>
+      <ul>
+        <li>O admin cria a rifa e gera os números (ex: 1 até 1500).</li>
+        <li>Depois preenche nome/telefone e marca pago.</li>
+        <li>No sorteio, dá pra escolher “somente pagos”.</li>
+      </ul>
+    </section>
+
+    <footer class="foot muted">Feito para rodar em VPS Ubuntu • Backend + MySQL</footer>
+  </div>
+
+<script src="/public.js"></script>
+</body>
+</html>

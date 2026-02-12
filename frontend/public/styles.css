@@ -1,0 +1,65 @@
+/* Estilo simples e profissional (tema escuro) */
+:root{
+  --bg:#0b0f14;
+  --card:#121924;
+  --text:#e9eef6;
+  --muted:#a7b2c3;
+  --line:#223044;
+  --btn:#1f2a3b;
+  --btn2:#2f4bff;
+  --danger:#ff3b3b;
+  --ok:#20c997;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+.wrap{max-width:980px;margin:0 auto;padding:20px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+h1{margin:0;font-size:22px}
+h2{margin:0 0 12px 0;font-size:16px}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:16px;
+  margin:12px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input,select{
+  background:#0d1320;
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  outline:none;
+  min-width: 220px;
+}
+.btn{
+  background:var(--btn);
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.btn.primary{background:var(--btn2);border-color:#2f4bff}
+.btn.danger{background:#2b1212;border-color:#5a1a1a;color:#ffd1d1}
+.muted{color:var(--muted)}
+.result{margin-top:12px;padding:12px;border-radius:12px;border:1px dashed var(--line)}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;border:1px solid var(--line)}
+.badge.ok{background:rgba(32,201,151,.15);border-color:rgba(32,201,151,.45)}
+.badge.no{background:rgba(255,59,59,.12);border-color:rgba(255,59,59,.35)}
+.foot{margin-top:22px}
+table{width:100%;border-collapse:collapse}
+td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left}
+.small{font-size:12px}

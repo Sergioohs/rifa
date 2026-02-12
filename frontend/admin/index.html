@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Painel Admin - Rifa</title>
+  <link rel="stylesheet" href="/admin/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div>
+        <h1>Painel Admin</h1>
+        <p class="muted">Gerenciar rifas, números, pagamentos e sorteio</p>
+      </div>
+      <div class="row">
+        <a class="btn" href="/">Página Pública</a>
+        <button class="btn danger" id="logout">Sair</button>
+      </div>
+    </header>
+
+    <section class="card" id="loginCard">
+      <h2>Login</h2>
+      <div class="row">
+        <input id="email" type="email" placeholder="Email" />
+        <input id="password" type="password" placeholder="Senha" />
+        <button class="btn primary" id="loginBtn">Entrar</button>
+      </div>
+      <p class="muted small">Padrão: admin@admin.com / admin123 (troque no .env)</p>
+      <div id="loginMsg" class="result"></div>
+    </section>
+
+    <section class="card" id="raffleCard" style="display:none">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2>Rifas</h2>
+        <button class="btn primary" id="reload">Atualizar</button>
+      </div>
+
+      <div class="row" style="margin-top:10px">
+        <input id="newTitle" placeholder="Nome da rifa" />
+        <input id="organizer" placeholder="Quem fez o sistema (organizador)" />
+        <input id="responsible" placeholder="Responsável pela rifa" />
+        <input id="price" placeholder="Valor (ex: 5,00)" />
+        <input id="drawDate" type="date" />
+        <button class="btn primary" id="createRaffle">Criar</button>
+      </div>
+
+      <div id="raffles" style="margin-top:12px"></div>
+    </section>
+
+    <section class="card" id="ticketsCard" style="display:none">
+      <div class="row" style="justify-content:space-between;align-items:center">
+        <h2 id="ticketsTitle">Números</h2>
+        <div class="row">
+          <button class="btn" id="back">Voltar</button>
+          <a class="btn" id="csv" href="#">CSV</a>
+          <a class="btn" id="pdf" href="#">PDF</a>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:10px;align-items:flex-end">
+        <div>
+          <div class="muted small">Gerar números 1..N</div>
+          <div class="row">
+            <input id="maxNumber" type="number" min="1" placeholder="Ex: 1500" />
+            <button class="btn primary" id="gen">Gerar</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="muted small">Buscar</div>
+          <div class="row">
+            <input id="q" placeholder="Número / nome / telefone" />
+            <select id="paidFilter">
+              <option value="">Pago (todos)</option>
+              <option value="1">Somente pagos</option>
+              <option value="0">Somente não pagos</option>
+            </select>
+            <select id="resFilter">
+              <option value="">Reservado (todos)</option>
+              <option value="1">Somente reservados</option>
+              <option value="0">Somente não reservados</option>
+            </select>
+            <button class="btn" id="search">Buscar</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="muted small">Sorteio</div>
+          <div class="row">
+            <select id="onlyPaid">
+              <option value="1">Somente pagos</option>
+              <option value="0">Todos</option>
+            </select>
+            <button class="btn primary" id="draw">Sortear</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="winner" class="result" style="margin-top:12px"></div>
+      <div id="tickets" style="margin-top:12px"></div>
+    </section>
+
+    <footer class="foot muted">Admin separado • JWT • MySQL</footer>
+  </div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>
